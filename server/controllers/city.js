@@ -9,15 +9,15 @@ exports.renderCities = (req, res) => {
 
 exports.getAllCities = (req, res, next) => {
   getCities()
-    .then(result => {
+    .then((result) => {
       res.json(result.rows);
     })
-    .catch(err => next(err));
+    .catch((err) => next(err));
 };
 
 exports.add = (req, res, next) => {
   const cityInfo = req.body;
   addCity(cityInfo)
     .then(() => res.redirect('/cities'))
-    .catch(err => next(err));
+    .catch((err) => next(err));
 };
